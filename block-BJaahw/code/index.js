@@ -46,14 +46,13 @@ let userMethod = {
 
 // 5. Convert the `createUser` function into Pseudoclassical pattern of object creation. Use `F.prototype` to store the methods. `F.prototype` means storing the methods in prototype property of the function.
 
-function createUser(name,age) {
-  // let user = Object.create(createUser.prototype);
+function CreateUser(name,age) {
+  let user = Object.create(createUser.prototype);
     user.name = name;
     user.age = age;
-
-    // return user;
+    return user;
 }
- createUser.prototype = {
+ CreateUser.prototype = {
     sayHello: function () {
       alert(`Welcome ${this.name}`);
     }
@@ -64,7 +63,7 @@ let personOne = new CreateUser('banu', 24);
 let personTwo = new CreateUser('sanu', 14);
 
 // 7. Try calling `personOne.sayHello()` and `personTwo.sayHello()`. Check if you get the required output.
-
+// - Yes got the required the output
 
 // 8. Convert the `createUser` function into `User` class.
 
@@ -86,3 +85,4 @@ let personOne = new User('banu', 24);
 let personTwo = new User('sanu', 14);
 
 // 10. Try calling `personOne.sayHello()` and `personTwo.sayHello()`. Check if you get the required output.
+// - Yes got the required the output
