@@ -60,7 +60,7 @@
 // let userMethod  = {
     
 //     getProjects : function() {
-//         this.noOfProjects = noOfProjects;
+      
 //         return this.noOfProjects;
 //     }, 
 //     changeName : function(newName) {
@@ -82,7 +82,7 @@
 // console.log(user1.name);
 // console.log(user1.id);
 // console.log(user1.noOfProjects);
-// console.log(user1.getProjects);
+// console.log(user1.getProjects());
 // console.log(user1.changeName('Vinee'));
 // console.log(user1.incrementProject());
 // console.log(user1.decrementProject());
@@ -99,7 +99,7 @@
 // User.prototype  = {
     
 //     getProjects : function() {
-//       this.noOfProjects = noOfProjects;
+//      
 //       return this.noOfProjects;
 //     }, 
 //     changeName : function(newName) {
@@ -158,7 +158,7 @@ let user1 = new User('Jordan', 1234, 2);
 console.log(user1.name);
 console.log(user1.id);
 console.log(user1.noOfProjects);
-console.log(user1.getProjects);
+console.log(user1.getProjects());
 console.log(user1.changeName('Vinee'));
 console.log(user1.incrementProject());
 console.log(user1.decrementProject());
