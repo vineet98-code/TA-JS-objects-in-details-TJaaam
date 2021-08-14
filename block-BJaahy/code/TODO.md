@@ -2,9 +2,61 @@
 
 - Create a class named `Square` which accepts one parameter `side` and will set two property `width` and `height` to the value of `side`.
 
+```js
+class Square {
+   constructor(side){
+    this.side = side;
+   }
+   set Width(value) {
+     this.side = value;
+   }
+   set Height(value) {
+     this.side = value;
+   }
+}
+```
+
 - Add a method name `description` that will alert a message saying `The square is ${width} x ${height}`
 
+```js
+class Square {
+   constructor(side){
+    this.side = side;
+   }
+   set Width(value) {
+     this.side = value;
+   }
+   set Height(value) {
+     this.side = value;
+   }
+   description(width,height) {
+     alert(`The square is ${width} x ${height}`);
+   }
+}
+```
+
+
 - Create a method inside the class named `calcArea` that will return the area of the square.
+
+```js
+class Square {
+   constructor(side){
+    this.side = side;
+   }
+   set Width(value) {
+     this.side = value;
+   }
+   set Height(value) {
+     this.side = value;
+   }
+   description(width,height) {
+     alert(`The square is ${width} x ${height}`);
+   }
+   calcArea(side){
+     return width * height;
+   }
+}
+```
 
 - Create a `area` getter method using which we can get the area of the square.
 
