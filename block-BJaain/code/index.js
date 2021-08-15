@@ -1,23 +1,23 @@
-console.log(this.document === document); // Output
+console.log(this.document === document); // Output - true
 
 // ------------
 
-console.log(this === window); //Output
+console.log(this === window); //Output - true
 
 // ------------
 
 var myFunction = function () {
   console.log(this);
 };
-myFunction(); // Output
+myFunction(); // Output - pointing to windows
 
 // ------------
 
 function f1() {
-  'use strict';
+  // 'use strict';
   return this;
 }
-console.log(f1() === window); //Output
+console.log(f1() === window); //Output - false  - Default binding will not work in Strict mode.
 
 // ------------
 
@@ -26,7 +26,7 @@ function foo() {
   console.log(this === window);
 }
 
-foo(); //Output ??
+foo(); //Output ?? -  Simple function call - true;
 
 // ------------
 
@@ -42,7 +42,7 @@ var myObject = {};
 myObject.someMethod = function () {
   console.log(this);
 };
-myObject.someMethod(); //Value Of This
+myObject.someMethod(); //Value Of This - {someMethod: f}
 
 // ------------
 
@@ -56,9 +56,9 @@ function Person(fn, ln) {
 }
 
 let person = new Person('John', 'Reed');
-person.displayName(); // Output
+person.displayName(); // Output - Name: John Reed
 let person2 = new Person('Paul', 'Adams');
-person2.displayName(); // Output
+person2.displayName(); // Output - Name: Paul Adams
 
 // ------------
 
@@ -76,10 +76,10 @@ let user = {
   },
 };
 
-user.foo(); // Output
+user.foo(); // Output - Simple function call - false
 let fun1 = user.foo1;
-fun1(); // Output ??
-user.foo1(); // Output ??
+fun1(); // Output ?? - true
+user.foo1(); // Output ?? - false
 
 // ------------
 
@@ -91,13 +91,13 @@ var obj = {
   },
 };
 
-obj.getX(); // Output ??
+obj.getX(); // Output ?? - 81
 
 var retrieveX = obj.getX;
-retrieveX(); //Output ??
+retrieveX(); //Output ?? - 9
 
 var boundGetX = retrieveX.bind(obj);
-boundGetX(); // Output ??
+boundGetX(); // Output ?? - 81
 
 // ------------
 
@@ -111,11 +111,11 @@ function Person(fn, ln) {
 }
 
 let person = new Person('John', 'Reed');
-person.displayName(); // Output
+person.displayName(); // Output - Name: John Reed
 let person2 = new Person('Paul', 'Adams');
-person2.displayName(); // Output
+person2.displayName(); // Output - Name: Paul Adams
 
-person.displayName.call(person2); // Output ??
+person.displayName.call(person2); // Output ?? - Name: Paul Adams
 
 // ------------
 
@@ -132,7 +132,7 @@ obj.getThis3 = obj.getThis.bind(obj);
 obj.getThis4 = obj.getThis2.bind(obj);
 
 // Output
-obj.getThis();
+obj.getThis(); - 
 
 // Output
 obj.getThis.call(a);
@@ -158,10 +158,10 @@ let person = {
   },
 };
 
-person.greet(); // output
+person.greet(); // output - hello, Jay
 
 let greet = person.greet;
-greet(); // output
+greet(); // output -  greet is not defined 
 
 // -------------
 
@@ -178,14 +178,14 @@ let person = {
     return this.name;
   },
 };
-console.log(person.details.print()); // output?
-console.log(person.print()); // output?
+console.log(person.details.print()); // output? - Jay Details
+console.log(person.print()); // output? - Jay Person
 
 let name1 = person.print;
 let name2 = person.details;
 
-console.log(name1()); // output?
-console.log(name2.print()); // output?
+console.log(name1()); // output?  -  undefined
+console.log(name2.print()); // output? - Jay Person
 
 // --------
 
@@ -199,7 +199,7 @@ let outerFn = function () {
   return innerFn;
 };
 
-outerFn()();
+outerFn()(); // - 
 
 // -----------
 
@@ -210,7 +210,7 @@ let object = {
     console.log('this inside of outerFn double()');
     console.log(this);
     return this.data.map(function (item) {
-      console.log(this); // Output ???
+      console.log(this); // Output ??? -  
       return item * 2;
     });
   },
@@ -218,7 +218,7 @@ let object = {
     console.log('this inside of outerFn doubleArrow()');
     console.log(this);
     return this.dataDouble.map((item) => {
-      console.log(this); // Output ???
+      console.log(this); // Output ??? - 
       return item * 2;
     });
   },
@@ -238,7 +238,7 @@ function print() {
 }
 
 let printNameBob = print.bind(bobObj);
-console.log(printNameBob()); // output??
+console.log(printNameBob()); // output?? - 
 
 // -------------------
 
