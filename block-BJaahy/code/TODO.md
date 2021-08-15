@@ -5,13 +5,8 @@
 ```js
 class Square {
    constructor(side){
-    this.side = side;
-   }
-   set Width(value) {
-     this.side = value;
-   }
-   set Height(value) {
-     this.side = value;
+    this.width = side;
+    this.height = side;
    }
 }
 ```
@@ -21,16 +16,12 @@ class Square {
 ```js
 class Square {
    constructor(side){
-    this.side = side;
+    this.width = side;
+    this.height = side;
    }
-   set Width(value) {
-     this.side = value;
-   }
-   set Height(value) {
-     this.side = value;
-   }
-   description(width,height) {
-     alert(`The square is ${width} x ${height}`);
+   
+   description() {
+     alert(`The square is ${this.width} x ${this.height}`);
    }
 }
 ```
@@ -41,19 +32,15 @@ class Square {
 ```js
 class Square {
    constructor(side){
-    this.side = side;
+    this.width = side;
+    this.height = side;
    }
-//    set Width(value) {
-//      this.side = value;
-//    }
-//    set Height(value) {
-//      this.side = value;
-//    }
-//    description(width,height) {
-//      alert(`The square is ${width} x ${height}`);
-//    }
-   calcArea(side){
-     return side * side;
+   
+   description() {
+     alert(`The square is ${this.width} x ${this.height}`);
+   }
+   calcArea(){
+     return this.width * this.height;
    }
 }
 ```
@@ -63,23 +50,18 @@ class Square {
 ```js
 class Square {
    constructor(side){
-    this.side = side;
+    this.width = side;
+    this.height = side;
    }
-   set Width(value) {
-     this.side = value;
-   }
-   set Height(value) {
-     this.side = value;
-   }
+   
    description() {
      alert(`The square is ${this.width} x ${this.height}`);
    }
-   calcArea(side){
-     let area = this.side * this.side;
-     return area;
+   calcArea(){
+     return this.width * this.height;
    }
-   getArea(){
-       return this.
+   get area(){
+       return this.width * this.height;
    }
 }
 
@@ -87,16 +69,107 @@ class Square {
 
 - Create a `area` setter method that will accept the area of the square. Based on the value of area it will set the value of `width` and `height`. If the passed value is not the area of the square alert say `Not a valid input`
 
+```js
+class Square {
+   constructor(side){
+    this.width = side;
+    this.height = side;
+   }
+   
+   description() {
+     alert(`The square is ${this.width} x ${this.height}`);
+   }
+   calcArea(){
+     return this.width * this.height;
+   }
+   get area(){
+       return this.width * this.height;
+   }
+   set area(value){
+     if(value !== NaN){
+       alert(`Not a valid input`);
+     }
+      let side = Math.sqrt(value);
+      this.width = side;
+      this.height = side;
+   }
+   
+}
+
+```
+
 - Create a static method named `isEqual` which accepts two `square` object with `width` and `height` property. If the area of both square is same it will return `true` or `false`.
 
+```js
+class Square {
+   constructor(side){
+    this.width = side;
+    this.height = side;
+   }
+   
+   description() {
+     alert(`The square is ${this.width} x ${this.height}`);
+   }
+   calcArea(){
+     return this.width * this.height;
+   }
+   get area(){
+       return this.width * this.height;
+   }
+   set area(value){
+     if(value !== NaN){
+       alert(`Not a valid input`);
+     }
+      let side = Math.sqrt(value);
+      this.width = side;
+      this.height = side;
+   }
+   static isEqual(a,b){
+     return (a.area) === (b.area);
+   }
+}
+```
+
 - Create another property named `numberOfTimes` that will hold the value of number of times the area property is accessed from the object. The values will initialize to `0`. The area property can't be accessed more than 4 times. If it crosses 4 times alert message `Upper Limit Reached`
+
+```js
+
+class Square {
+   constructor(side){
+    this.width = side;
+    this.height = side;
+    this.numberOfTimes = 0;
+   }
+   description() {
+     alert(`The square is ${this.width} x ${this.height}`);
+   }
+   calcArea(){
+     return this.width * this.height;
+   }
+   get area(){
+       if(this.numberOfTimes >= 4){
+         alert(`Upper Limit Reached`);
+       } else{
+          return this.width * this.height;
+          }
+   }
+   set area(value){
+     if(value !== NaN){
+       alert(`Not a valid input`);
+     }
+      let side = Math.sqrt(value);
+      this.width = side;
+      this.height = side;
+   }
+}
+```
 
 - Create two instance of the `Square` class
 
 ```js
 
-let square = Square(23);
-let square = Square(13);
+let square1 = new Square(23);
+let square2 = new  Square(13);
 
 ```
 
@@ -142,13 +215,18 @@ class User {
     this.firstName = firstName;
     this.lastName = lastName;
   }
-  set fullName(fullName){
-    if(value.length < 5){
+  get fullName(){
+    return `${this.firstName} ${this.lastName}`;
+  }
+  set fullName(FullName){
+    if(FullName.length < 5){
      alert(`Full name should be more than 5 characters`);
      return;
-    }
-    this.fullName = fullName;
+    } else {
+       this.FullName = FullName;
+      }
   }
+
 };
 
 let user = new User('vinee', 'kumar');
@@ -156,6 +234,31 @@ let user = new User('vinee', 'kumar');
 
 - Create a method named `nameContains` which will accept string and will return `true` or `false` based on if the name of the user contains the text that passed by user.
 
+```js
+
+class User {
+  constructor(firstName, lastName){
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+  get fullName(){
+    return `${this.firstName} ${this.lastName}`;
+  }
+  set fullName(FullName){
+    if(FullName.length < 5){
+     alert(`Full name should be more than 5 characters`);
+     return;
+    } else {
+       this.FullName = FullName;
+    }
+  }
+  nameContains(str){
+    return `${this.firstName} ${this.lastName}`.contains(str)
+  };
+  
+};
+let user = new User('vinee', 'kumar');
+```
 
 - Create two instance of the `User` class
 
