@@ -27,7 +27,7 @@ let animalMethods = {
     },
     changeLocation: function(newLocation){
         this.location = newLocation;
-        return this.newLocation;
+        return this.location;
     },
     summary: function(){   
         return `I live in ${this.location} and I have ${this.numberOfLegs}`;
