@@ -9,7 +9,7 @@ console.log(this === window); //Output - true
 var myFunction = function () {
   console.log(this);
 };
-myFunction(); // Output - pointing to windows
+myFunction(); // Output - pointing to windows because nothing on the left of it.
 
 // ------------
 
@@ -17,7 +17,8 @@ function f1() {
   // 'use strict';
   return this;
 }
-console.log(f1() === window); //Output - false  - Default binding will not work in Strict mode.
+console.log(f1() === window); //Output - false  - Default binding will not work in Strict mode.'use strict'
+//  doesn't allowed default binding 
 
 // ------------
 
@@ -26,7 +27,7 @@ function foo() {
   console.log(this === window);
 }
 
-foo(); //Output ?? -  Simple function call - true;
+foo(); //Output ?? -  Simple function call , true because nothing on the left side of it;
 
 // ------------
 
@@ -34,7 +35,8 @@ foo(); //Output ?? -  Simple function call - true;
 (function () {
   console.log('Anonymous function invocation');
   console.log(this === window);
-})(); //Output
+})(); //Output - Anonymous function invocation, true because nothing is on the left side of function call i.e poiting to window.
+
 
 // ------------
 
@@ -132,22 +134,24 @@ obj.getThis3 = obj.getThis.bind(obj);
 obj.getThis4 = obj.getThis2.bind(obj);
 
 // Output
-obj.getThis(); - 
+obj.getThis(); /* Arrow function doesn't understand this and i.e pointing to windows And if there's no 
+Arrow function, implicit function may applied.
+*/
 
 // Output
-obj.getThis.call(a);
+obj.getThis.call(a); /*An Explicit binding is also work in normal function. it doesn't work in  arrow function*/
 
 // Output
-obj.getThis2();
+obj.getThis2(); /*Implicit binding will take place so the ouput will be obj because there's no arrow function*/
 
 // Output
-obj.getThis2.call(a);
+obj.getThis2.call(a); /*Changing the value using explicit binding so it pointing to  a */
 
 // Output
-obj.getThis3();
+obj.getThis3(); /* windows */
 
 // Output
-obj.getThis4();
+obj.getThis4(); /*Pointing to obj*/
 
 // -------------
 
@@ -210,7 +214,7 @@ let object = {
     console.log('this inside of outerFn double()');
     console.log(this);
     return this.data.map(function (item) {
-      console.log(this); // Output ??? -  
+      console.log(this); // Output ??? -  Window
       return item * 2;
     });
   },
@@ -218,7 +222,7 @@ let object = {
     console.log('this inside of outerFn doubleArrow()');
     console.log(this);
     return this.dataDouble.map((item) => {
-      console.log(this); // Output ??? - 
+      console.log(this); // Output ??? - obj
       return item * 2;
     });
   },
@@ -238,7 +242,7 @@ function print() {
 }
 
 let printNameBob = print.bind(bobObj);
-console.log(printNameBob()); // output?? - 
+console.log(printNameBob()); // output?? - Bob - explicit binding 
 
 // -------------------
 
@@ -257,7 +261,7 @@ let obj2 = {
 };
 
 let getSecondData = obj2.printSecondData.bind(obj1);
-console.log(getSecondData()); // Output and why ???
+console.log(getSecondData()); // Output and why ??? -  2 
 
 // --------------
 
@@ -268,7 +272,7 @@ const call = {
   },
 };
 
-call.says(); // output ???
+call.says(); // output ??? - Hey, mom just called.
 
 // -----------------
 
@@ -281,7 +285,8 @@ const call = {
 
 let newCall = call.says;
 
-newCall(); // output ???
+newCall(); // output ??? - Here default binding is applied here, So it will point to window and it will return the message 
+// Hey, undefined just called.
 
 //  -----------------
 
@@ -299,4 +304,4 @@ const call = {
 
 let newCall = call.anotherCaller;
 
-newCall(); // output ??
+newCall(); // output ?? - default binding will be applied, so will point to windows and undefined 
