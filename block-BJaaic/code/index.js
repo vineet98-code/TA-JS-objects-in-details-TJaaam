@@ -77,7 +77,7 @@ let dogMethods = {
     },
 }
 
-let dog1 = dogs('labra', black);
+let dog1 = dogs('labra', 'black');
 
 
 // #### Cat
@@ -124,4 +124,4 @@ let catMethods = {
     }
 }
 
-let cat1 = cats('pochi', red);
+let cat1 = cats('pochi', 'red');
