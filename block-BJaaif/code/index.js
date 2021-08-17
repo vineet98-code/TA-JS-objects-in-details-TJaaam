@@ -31,6 +31,15 @@ var personStore = {
 
 function personFromPersonStore(name, age) {
   // add code here
+  let person = Object.create(personMethods);
+  person.name = name;
+  person.age = age;
+}
+
+let personMethods = {
+  greet: function () {
+    console.log('hello');
+  }
 }
 
 var sandra = personFromPersonStore('Sandra', 26);
@@ -54,6 +63,7 @@ var sandra = personFromPersonStore('Sandra', 26);
 
 function PersonConstructor() {
   // add code here
+
 }
 
 // /********* Uncomment this line to test your work! *********/
@@ -86,7 +96,7 @@ var mike = personFromConstructor('Mike', 30);
 
 class PersonClass {
   constructor() {
-    // add code here
+    
   }
 
   // add code here
@@ -127,9 +137,12 @@ var adminFunctionStore /* Put code here */;
 
 function adminFactory(name, score) {
   // Put code here
+  this.name = name;
+  this.name = score;
 }
 
 /* Put code here for a method called sharePublicMessage*/
+
 
 var adminFromFactory = adminFactory('Eva', 5);
 
