@@ -5,6 +5,14 @@
 
 // myMap function goes here
 
+
+
+Array.prototype = {
+  myMap: function(){
+    console.log();
+  }
+}
+
 // Test the myMap function you created above
 
 let numbers = [1, 5, 6, 8, 9];
@@ -23,12 +31,22 @@ let capitalWords = words
 console.log(doubleNum); // it should be [1, 9, 11, 15, 17]
 console.log(capitalWords); // it should be 'Quick Brown Fox Jumped Over A Lazy Dog'
 
+
 /*
 2. Add a method named `myFilter` to Array.prototype. myFilter should behave similar to Array.filter.
 After adding the function test it using the code below.
 */
 
 // You code goes here
+
+Array.prototype = {
+  myMap: function(num){
+    return num * 2 - 1;
+  },
+  myFilter: function(num) {
+    return num % 2 === 0;
+  }
+}
 
 let even = numbers.myFilter(function (num) {
   return num % 2 === 0;
@@ -50,6 +68,18 @@ Make sure it does not the changes the original array.
 */
 
 // You code goes here
+Array.prototype = {
+  myMap: function(num){
+    return num * 2 - 1;
+  },
+  myFilter: function(num) {
+    return num % 2 === 0;
+  },
+  shuffle: function(array) {
+    return 
+  }
+}
+
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(numbers.shuffle());
@@ -65,6 +95,20 @@ Unique means no element should come multiple times.
 
 // You code goes here
 
+Array.prototype = {
+  myMap: function(num){
+    return num * 2 - 1;
+  },
+  myFilter: function(num) {
+    return num % 2 === 0;
+  },
+  shuffle: function(array) {
+    return 
+  }
+  unique: function(num){
+  }
+}
+
 // Test to check the shuffle method (It will return different output every time you call)
 let num = [1, 2, 3, 4, 2, 3, 6, 7, 7];
 let strings = 'helloworld'.split('');
@@ -79,6 +123,21 @@ array that will contain only element that is common in both the array.
 
 // You code goes here
 
+Array.prototype = {
+  myMap: function(num){
+    return num * 2 - 1;
+  },
+  myFilter: function(num) {
+    return num % 2 === 0;
+  },
+  shuffle: function(array) {
+    return 
+  }
+  intersection: function(){
+    return 
+  }
+}
+
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(num.intersection([2, 7, 11, 32])); // [2, 7]
 console.log(strings.intersection('heyworld'.split(''))); // ['h', 'e', 'o', 'w', 'r', 'l', 'd']
@@ -90,6 +149,21 @@ chunk will be the remaining elements. `length` should default to 1.
 */
 
 // You code goes here
+
+Array.prototype = {
+  myMap: function(num){
+    return num * 2 - 1;
+  },
+  myFilter: function(num) {
+    return num % 2 === 0;
+  },
+  shuffle: function(array) {
+    return 
+  }
+  intersection: function(){
+    return 
+  }
+}
 
 // Test to check the shuffle method (It will return different output every time you call)
 console.log(num.chunk(2)); // [[1, 2], [3, 4], [2, 3], [6, 7], [7]]
