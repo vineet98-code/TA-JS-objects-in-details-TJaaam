@@ -1,7 +1,7 @@
 ## An object-oriented book-list!
 
-- [ ] Create a class BookList
-- [ ] Create another class called Book
+- [ ] Create class called Book
+- [ ] Create a another class BookList
 
 #### Each Book should have several properties:
 
