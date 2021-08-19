@@ -12,22 +12,34 @@ Queue
 
 ```js
 class Stack {
-    constructor(stack){
-        this.stack = stack;
+    constructor(){
+        this.stack = [];
     }
-  push(value){
-      const this.insert = stack.unshift(value);
-    
-      return this.insert; 
-  }
-  pop(value){
-      this.stack = this.stack - value;
+  push(ele){
+      this.stack.unshift(ele)
       return this.stack; 
+    }
+  pop(ele){
+      this.stack.shift(ele)
+      return this.stack; 
+    }
+  peek(index = this.stack.length - 1){
+      return this.stack[index]; 
+    }
+  reverse(){
+      this.stack.sort((a,b) => a - b);
+      return this.stack; 
+    }
+  isEmpty(ele){
+     return !(this.stack.length > 0);
+    }
+  displayStack(ele)  {
+      return this.stack.join();
   }
-  getter length(){
+  get length(){
       return this.stack;
     }
-}
+};
 ```
 
 Data:
@@ -55,7 +67,7 @@ let myStack = new Stack();
 myStack.push('One');
 myStack.push('Two');
 console.log(myStack.length); // 2
-console.log(myStack.peek()); // "Two"
+console.log(myStack.peek()); // "Two" 
 console.log(myStack.peek(0)); // "One"
 console.log(myStack.reverse()); // ['Two', 'One']
 console.log(myStack.displayStack()); // 'Two One'
@@ -71,21 +83,30 @@ console.log(myStack.isEmpty()); // true
 
 ```js
 class Queue {
-    constructor(stack){
-        this.stack = stack;
+    constructor(){
+        this.queue = [];
     }
-  enqueue(value){
-      const this.insert = stack.unshift(value);
-      return this.insert; 
+  enqueue(ele){
+      this.queue.push(ele)
+      return this.queue; 
     }
-  dequeue(value){
-      this.stack = this.stack - value;
-      return this.stack; 
+  dequeue(ele){
+      this.queue.pop(ele)
+      return this.queue; 
     }
-  getter length(){
-      return this.stack;
+  peek(index = this.queue.length - 1){
+      return this.queue[index]; 
     }
-}
+  isEmpty(ele){
+     return !(this.queue.length > 0);
+    }
+  displayQueue(ele)  {
+      return this.queue.join();
+  }
+  get length(){
+      return this.queue;
+    }
+};
 ```
 Data:
 
@@ -107,6 +128,7 @@ Getter
 
 ```js
 let atmQueue = new Queue();
+
 atmQueue.enqueue('Aman');
 atmQueue.enqueue('John');
 atmQueue.enqueue('Rohan');
