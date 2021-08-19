@@ -10,6 +10,26 @@ Queue
 
 1. Create a class name `Stack` with the following data and methods. Also implement a `length` getter method.
 
+```js
+class Stack {
+    constructor(stack){
+        this.stack = stack;
+    }
+  push(value){
+      const this.insert = stack.unshift(value);
+    
+      return this.insert; 
+  }
+  pop(value){
+      this.stack = this.stack - value;
+      return this.stack; 
+  }
+  getter length(){
+      return this.stack;
+    }
+}
+```
+
 Data:
 
 - `stack`
@@ -31,6 +51,7 @@ Getter
 
 ```js
 let myStack = new Stack();
+
 myStack.push('One');
 myStack.push('Two');
 console.log(myStack.length); // 2
@@ -48,6 +69,24 @@ console.log(myStack.isEmpty()); // true
 
 2. Create a class name `Queue` with the following data and methods. Also implement a `length` getter method.
 
+```js
+class Queue {
+    constructor(stack){
+        this.stack = stack;
+    }
+  enqueue(value){
+      const this.insert = stack.unshift(value);
+      return this.insert; 
+    }
+  dequeue(value){
+      this.stack = this.stack - value;
+      return this.stack; 
+    }
+  getter length(){
+      return this.stack;
+    }
+}
+```
 Data:
 
 - `queue`
