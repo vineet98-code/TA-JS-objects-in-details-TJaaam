@@ -13,7 +13,7 @@ class Book {
 }
 
 class BookList  {
-       constructor() {
+        constructor() {
         this.book = [];
         this.currentIndexBook = 0;
     }
@@ -25,17 +25,16 @@ class BookList  {
       return this.book[this.currentIndexBook]; 
     }
     getNextBook(){
-      this.currentIndexBook += 1;
+      this.currentIndexBook =  this.currentIndexBook + 1;
       return this.book[this.currentIndexBook];
     }
     getPrevBook(){
-        this.currentIndexBook -= 1;
+        this.currentIndexBook = this.currentIndexBook - 1;
         return this.book[this.currentIndexBook];
     }
     changeCurrentBook(index){
         this.currentIndexBook = index;
         return this.currentIndexBook
-
     }
 };
 
@@ -47,4 +46,4 @@ let book5 = new Book('The Great Gatsby', 'fiction', 'F. Scott Fitzgerald');
 
 let library  = new BookList();
 
-library.add(book1, book2, book3, book4, book5);
+library.add([book1, book2, book3, book4, book5]);
