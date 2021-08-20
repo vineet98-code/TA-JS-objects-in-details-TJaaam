@@ -23,8 +23,9 @@ class Player extends Person{
         console.log(`${this.name} is playing. and age is ${this.age}`);  
     }
 };
+
 class Cricketer extends Player{
-    constructor(teamName,name, age, gender){
+    constructor(teamName,name, age, gender, sportsName){
         super(sportsName, name, age, gender);
         this.teamName = teamName;
     }
