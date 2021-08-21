@@ -8,16 +8,40 @@
     <title>Book Store Using OOP</title>
 </head>
 <body>
+  <div class="modal">
     <div class="container">
-        <input type="text" placeholder="Enter the todo list" />
-        <ul class="todos"></ul>
-        <footer>
-            <button class="all">All</button>
-            <button class="active">Active</button>
-            <button class="completed">Completed</button>
-            <button class="clear">Clear Completed</button>
-        </footer>
+          <h1 class ="heading">ADD NEW BOOK</h1>
+          <p class="form_subtitle">
+            You can add multiple books to your reading list, you can delete them and mark as read
+          </p>
+          <form action="" class="form">
+            <div class="form__input--fullwidth--icon">
+              <i class="form__input__icon fa fa-flask"
+                 aria-hidden="true"></i>
+              <input name = "bookName" class="form__input" type="text" placeholder="Name of the book!"/>   
+            </div>
+            
+            <input name = "bookAuthor" class="form__input" type="text" placeholder="Author of the book!"/>
+            
+            <input name = "bookImage" class="form__input" type="text" placeholder="Book poster image URL"/>
+
+            <button class="form__button" type = "submit">Submit</button>
+            
+          </form>
     </div>
-    <script src ="./index.js"></script>
+  </div>
+  <div class="books">
+    <ul class="book_list">
+      <!-- <li>
+            <img src="" alt="">
+            <h1 class="book-heading">Sapiens</h1>
+            <p class="book-author">Yuval Noah Harat</p>
+            <button class="form_button book-btn">
+              Mark as read!
+            </button>
+        </li> -->
+    </ul>
+  </div>  
+<script src ="./index.js"></script>
 </body>
 </html>
