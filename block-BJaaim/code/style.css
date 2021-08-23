@@ -1,0 +1,42 @@
+
+
+/* Main Style */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(21, 73%, 47%);
+}
+.quiz{
+    margin: 15px 0;
+    padding: 1rem 10px;
+}
+.options{
+  padding: 1rem 0;
+}
+label{
+    margin-right: 15px;
+    line-height: 32px;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.prev, .next, .btn, .show_result{
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    box-shadow: none;
+    display: inline-block;
+    background-color: rgb(235, 15, 180);
+    margin: 10px 0;
+    padding: 15px 25px;
+    text-decoration: none;
+    outline: 0px;
+    border-width: 0px;
+    border-radius: 10px;
+}
+.show_result{
+    visibility: hidden;
+}
